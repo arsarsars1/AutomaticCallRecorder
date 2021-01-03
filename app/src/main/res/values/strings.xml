@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CallRecorder</string>
+    <string name="start">START RECORDING</string>
+    <string name="stop">STOP RECORDING</string>
+</resources>
