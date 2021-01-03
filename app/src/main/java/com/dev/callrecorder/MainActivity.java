@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         context = this;
 
         devicePolicyManager = (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
-        componentName = new ComponentName(this, DeviceAdminDemo.class);
+        componentName = new ComponentName(this, DeviceAdmin.class);
 
         if (!devicePolicyManager.isAdminActive(componentName)) {
             Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
@@ -74,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     //On RecordButton Clicked
-
     public void record(View view) {
         runtimePermission();
     }
@@ -140,8 +139,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // Start and Stop Activity
-
+    // Start and Stop Service
     private void doAction() {
 
         Intent intent = new Intent(this, CallService.class);
