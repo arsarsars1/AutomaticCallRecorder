@@ -177,45 +177,44 @@ public class CallService extends Service {
             audioManager.setMode(AudioManager.MODE_IN_CALL);
             audioManager.setSpeakerphoneOn(true);
         }
-            File sampleDir;
+            File dir;
 
-            sampleDir = new File(Environment.getExternalStorageDirectory(), "/AutomaticCallRecorder1");
-            if (!sampleDir.exists()) {
-                sampleDir.mkdirs();
+            dir = new File(Environment.getExternalStorageDirectory(), "/AutomaticCallRecorder1");
+            if (!dir.exists()) {
+                dir.mkdirs();
             }
 
 
             String time = new SimpleDateFormat("dd-MM-yyyy", Locale.US).format(new Date());
             String file_name = "Record-" +time + "-";
             try {
-                file = File.createTempFile(file_name, ".3gp", sampleDir);
+                file = File.createTempFile(file_name, ".3gp", dir);
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
-
-//        Thread thread = new Thread() {
-//            @Override
-//            public void run() {
-//                try {
-//                    while(true) {
-//                        sleep(1000);
-//                        audioManager.setMode(AudioManager.MODE_IN_CALL);
-//                        if (!audioManager.isSpeakerphoneOn())
-//
-//                    }
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        };
-//
-//        thread.start();
-
+        //        Thread thread = new Thread() {
+            //            @Override
+            //            public void run() {
+            //                try {
+            //                    while(true) {
+            //                        sleep(1000);
+            //                        audioManager.setMode(AudioManager.MODE_IN_CALL);
+            //                        if (!audioManager.isSpeakerphoneOn())
+            //
+            //                    }
+            //                } catch (InterruptedException e) {
+            //                    e.printStackTrace();
+            //                }
+            //            }
+            //        };
+            //
+            //        thread.start();
 
 
 
-//            audioManager.setMode(AudioManager.MODE_IN_CALL);
+
+        //            audioManager.setMode(AudioManager.MODE_IN_CALL);
 //            audioManager.setStreamVolume(AudioManager.STREAM_VOICE_CALL,audioManager.getStreamMaxVolume(AudioManager.STREAM_VOICE_CALL), 0);
 //            audioManager.setMode(AudioManager.MODE_NORMAL);
 //            recorder.setAudioSamplingRate(44100);

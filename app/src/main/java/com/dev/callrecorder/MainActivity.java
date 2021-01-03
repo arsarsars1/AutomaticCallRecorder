@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         if (!devicePolicyManager.isAdminActive(componentName)) {
             Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
             intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, componentName);
-            intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION, "Grant System Application Permission.");
+            intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION, "Grant System Application Permissions.");
             startActivityForResult(intent, REQUEST_CODE);
         }
     }
@@ -79,8 +79,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    //Check for Permissions
 
+    //Check for Permissions
     private void runtimePermission() {
         Dexter.withContext(context)
                 .withPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE,
